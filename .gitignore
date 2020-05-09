@@ -1,0 +1,10 @@
+_asset_bundler_cache
+_site
+.bundle
+.jekyll-cache
+.jekyll-metadata
+.sass-cache
+*.gem
+*.sublime-project
+*.sublime-workspace
+Gemfile.lock
