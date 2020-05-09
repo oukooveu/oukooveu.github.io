@@ -8,6 +8,8 @@ tags:
 
 Various Jenkins groovy scripts which can be useful in different situations.
 
+{% include toc %}
+
 ### Restart all failed jobs in folder
 ```
 import com.cloudbees.hudson.plugins.folder.AbstractFolder
