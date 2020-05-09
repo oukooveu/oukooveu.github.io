@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+## oukooveu.github.io
 
-You can use the [editor on GitHub](https://github.com/oukooveu/oukooveu.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Source theme is [so-simple-theme](https://github.com/mmistakes/so-simple-theme) by [mmistakes](https://github.com/mmistakes/).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+### How to run this site locally
+```
+export JEKYLL_VERSION=3.8.5
+docker run --rm -v="$PWD:/srv/jekyll" -v="$PWD/.bundle:/usr/local/bundle" -it -p 4000:4000 jekyll/jekyll:$JEKYLL_VERSION jekyll serve
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Force GitHub site update:
+```
+git commit --allow-empty -m "force rebuild of site"
+```
 
-### Jekyll Themes
+Fixed github-pages version in Gemfile:
+```
+gem "github-pages", "~> VERSION", group: :jekyll_plugins
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/oukooveu/oukooveu.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### How to check versions supported by GitHub:
+```
+curl -s https://pages.github.com/versions.json | jq .
+```
 
-### Support or Contact
+### Known issues
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Tags for collections do not work, there is related [PR](https://github.com/jekyll/jekyll/pull/5857), but it's still not clear how to incorporate this in existing theme.
