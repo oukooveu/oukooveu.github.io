@@ -1,7 +1,7 @@
 ---
 title: "How to build hadoop native libraries"
 categories:
-  - unsorted
+  - howto
 tags:
   - hadoop
   - lz4
